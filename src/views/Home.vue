@@ -1,18 +1,24 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="twitter-wrap">
+    <twitter-col contentFor="MakeSchool" />
+    <twitter-col contentFor="newsycombinator" />
+    <twitter-col contentFor="ycombinator" />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import TwitterCol from '@/components/TwitterCol'
 
 export default {
-  name: 'home',
+  name: 'Home',
   components: {
-    HelloWorld
+    TwitterCol
   }
 }
 </script>
+
+<style lang="stylus">
+.twitter-wrap
+  width 100%
+  display flex
+</style>
