@@ -12,7 +12,7 @@ export default {
   computed: {
     formatDate() {
       return new Date(this.createdAt).toLocaleDateString('en-us', {
-        weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+        weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit'
       })
     }
   }

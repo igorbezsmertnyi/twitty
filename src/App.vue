@@ -9,6 +9,7 @@ html
 body
   padding 0
   margin 0
+  overflow hidden
 
 #app
   font-family 'Avenir', Helvetica, Arial, sans-serif

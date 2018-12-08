@@ -1,11 +1,16 @@
 <template>
   <li class="twitt">
+    <user 
+      :user="twitt.user"
+      :retweetedStatus="twitt.retweeted_status"
+    />
+
     <a :href="twittUrl" target="_blank">
-      <user :user="twitt.user" />
       <twitt-content 
         :text="twitt.text"
         :entities="twitt.entities"
       />
+
       <created-at :createdAt="twitt.created_at" />
     </a>
   </li>

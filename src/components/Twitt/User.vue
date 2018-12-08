@@ -1,31 +1,55 @@
 <template>
-  <a 
-    :href="`https://twitter.com/${user.screen_name}`" 
-    target="_blank" 
-    class="twitt-user"
-  >
-    <div class="twitt-user__img">
-      <img :src="user.profile_image_url" :alt="user.name">
-    </div>
+  <div class="twitt-user">
+    <a 
+      :href="userUrl" 
+      target="_blank" 
+      class="twitt-user__link"
+    >
+      <div class="twitt-user__img">
+        <img :src="userImage" />
+      </div>
 
-    <p class="twitt-user__name">{{ user.name }}</p>
-  </a>
+      <p class="twitt-user__name">{{ user.name }}</p>
+    </a>
+
+    <p 
+      v-show="this.retweetedStatus"
+      class="twitt-user__retwitted"
+    >
+      {{ user.name }} Retwitted
+    </p>
+  </div>
 </template>
 
 <script>
 export default {
   name: 'User',
-  props: ['user']
+  props: ['user', 'retweetedStatus'],
+
+  computed: {
+    userUrl() {
+      const url = this.retweetedStatus ? this.retweetedStatus.user.screen_name : this.user.screen_name
+      return `https://twitter.com/${url}`
+    },
+
+    userImage() {
+      return this.retweetedStatus ? this.retweetedStatus.user.profile_image_url : this.user.profile_image_url
+    }
+  }
 }
 </script>
 
 <style lang="stylus">
 .twitt-user
   display flex
-  align-items center
-  text-decoration none
+  justify-content space-between
   border-bottom 1px solid #e8ecf1
   padding-bottom 14px
+
+  &__link
+    display flex
+    align-items center
+    text-decoration none
 
   &__img
     width 40px
@@ -46,4 +70,9 @@ export default {
     font-size 14px
     color #222f3e
     text-decoration none
+  
+  &__retwitted
+    font-size 12px
+    color #8395a7
+    padding-left 14px
 </style>

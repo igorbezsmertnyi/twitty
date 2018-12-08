@@ -55,13 +55,11 @@ export default {
 <style lang="stylus">
 .twitter-col
   width calc(100% / 3)
-  height 100vh
-  padding 0 24px
+  padding 0 10px 0 24px
   margin 20px 0 0
   border-right 1px solid #e8ecf1
   opacity .6
   transition opacity .4s
-  overflow-y auto
 
   &:last-child
     border-right 0
@@ -75,6 +73,8 @@ export default {
     cursor pointer
 
   &__twitts
+    height 100vh
     padding-left 0
     margin-top 56px
+    overflow-y auto
 </style>
