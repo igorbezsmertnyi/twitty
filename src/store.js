@@ -3,8 +3,10 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
+import twitter from './store/twitter'
+
 export default new Vuex.Store({
   modules: {
-    
+    twitter
   }
 })
