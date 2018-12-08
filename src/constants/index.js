@@ -1,0 +1,1 @@
+export const LOCAL_STORAGE_KEY = process.env.VUE_LOCALSTORAGE_KEY || 'twitty_local_starage_data_key'

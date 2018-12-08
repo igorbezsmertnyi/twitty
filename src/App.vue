@@ -4,6 +4,16 @@
   </div>
 </template>
 
+<script>
+export default {
+  name: 'App',
+
+  beforeCreate() {
+    this.$store.dispatch('loadLocalData')
+  },
+}
+</script>
+
 <style lang="stylus">
 html
 body
