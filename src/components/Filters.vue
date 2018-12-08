@@ -41,14 +41,11 @@
         />
       </div>
 
-      <el-button
-        @click="applyFilters"
-        class="filters__form__apply" 
-        type="primary" 
-        plain
-      >
-        Filter
-      </el-button>
+      <div class="filters__form__apply" >
+        <el-button @click="applyFilters" type="primary" plain>
+          Filter
+        </el-button>
+      </div>
     </div>
   </div>
 </template>
@@ -89,6 +86,8 @@ export default {
 </script>
 
 <style lang="stylus">
+@import '../styles'
+
 .filters
   &__form
     position absolute
@@ -101,14 +100,21 @@ export default {
     opacity 0
 
     &--visible
-      height 220px
+      height 280px
       transition all linear .2s
       opacity 1
+
+      +breakpoint(tablet)
+        height 220px
     
     &__filter
       padding 10px
       display flex
-      align-items center
+      flex-direction column
+
+      +breakpoint(tablet)
+        align-items center
+        flex-direction row
       
       label
         font-size 12px
@@ -116,9 +122,16 @@ export default {
         padding-right 14px
         white-space pre
       
+      .el-range-editor
       input
-        max-width 140px
+        width 100% !important
+
+        +breakpoint(tablet)
+          max-width 140px
     
     &__apply
-      margin-top 24px
+      margin 10px
+
+      +breakpoint(tablet)
+        margin-top 24px 0 0 0
 </style>

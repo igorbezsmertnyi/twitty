@@ -1,0 +1,13 @@
+breakpoint(brekpoint)
+  @media (min-width: $breakpoints[brekpoint])
+    {block}
+
+font(size)
+  font-sizes = $fonts[size]
+  font-size: font-sizes["mobile"]
+
+  +breakpoint(mobile)
+    font-size: font-sizes["tablet"]
+
+  +breakpoint(tablet)
+    font-size: font-sizes["desktop"]

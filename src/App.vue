@@ -10,7 +10,7 @@ export default {
 
   beforeCreate() {
     this.$store.dispatch('loadLocalData')
-  },
+  }
 }
 </script>
 

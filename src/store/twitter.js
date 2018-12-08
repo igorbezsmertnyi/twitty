@@ -59,7 +59,7 @@ export default {
   actions: {
     loadLocalData({ commit }) {
       const data = getObject(LOCAL_STORAGE_KEY)
-      if (typeof data === 'object') commit('SET_DATA', data)
+      if (data) commit('SET_DATA', data)
     },
 
     async loadTwitts({ commit, state }, twittsFor) {

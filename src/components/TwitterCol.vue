@@ -58,13 +58,23 @@ export default {
 </script>
 
 <style lang="stylus">
+@import '../styles'
+
 .twitter-col
-  width calc(100% / 3)
-  padding 0 24px
-  margin 20px 0 0
+  width calc(100% - 40px)
+  padding 20px
+  margin 0
   border-right 1px solid #e8ecf1
-  opacity .6
   transition opacity .4s
+
+  +breakpoint(mobile)
+    width 70%
+    margin 20px auto
+    padding 0 24px
+
+  +breakpoint(tablet)
+    width calc(100% / 3)
+    opacity .6
 
   &:last-child
     border-right 0
@@ -84,10 +94,12 @@ export default {
     cursor pointer
 
   &__twitts
-    height calc(100vh - 170px)
     padding 0 0 40px 0
-    margin-top 56px
-    overflow-y auto
+
+    +breakpoint(tablet)
+      height calc(100vh - 170px)
+      margin-top 56px
+      overflow-y auto
 
     &::-webkit-scrollbar {
       margin-right 0
