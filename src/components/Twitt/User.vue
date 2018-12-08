@@ -43,6 +43,7 @@ export default {
 .twitt-user
   display flex
   justify-content space-between
+  align-items center
   border-bottom 1px solid #e8ecf1
   padding-bottom 14px
 
@@ -75,4 +76,5 @@ export default {
     font-size 12px
     color #8395a7
     padding-left 14px
+    margin 0
 </style>
